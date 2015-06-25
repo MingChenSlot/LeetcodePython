@@ -1,5 +1,7 @@
 __author__ = 'mingchen'
 
+from random import randint
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -42,9 +44,9 @@ def constructCompleteBinaryTree(height):
     if height is 0:
         return None
     elif height is 1:
-        return TreeNode(0)
+        return TreeNode(randint(0, 100))
     else:
-        root = TreeNode(0)
+        root = TreeNode(randint(0, 100))
         root.addLeft(constructCompleteBinaryTree(height - 1))
         root.addRight(constructCompleteBinaryTree(height - 1))
         return root
